@@ -16,4 +16,4 @@ def walk(stream):
 
 
 if __name__ == "__main__":
-    print(walk(bits(64, seed=42))[-1])
+    print(walk(bits(64, seed=None))[-1])
