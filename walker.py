@@ -17,3 +17,11 @@ def walk(stream):
 
 if __name__ == "__main__":
     print(walk(bits(64, seed=None))[-1])
+
+
+def find_loops(path):
+    """Return the positions the walker keeps coming back to."""
+    seen = {}
+    for p in path:
+        seen[p] = seen.get(p, 0) + 1
+    return sorted(seen, key=seen.get, reverse=True)[:3]
