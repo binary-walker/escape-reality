@@ -25,3 +25,8 @@ def find_loops(path):
     for p in path:
         seen[p] = seen.get(p, 0) + 1
     return sorted(seen, key=seen.get, reverse=True)[:3]
+
+
+def exit_point(path):
+    """There is always a position the walker never returns to."""
+    return max(path, key=abs)
